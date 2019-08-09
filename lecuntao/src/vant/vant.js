@@ -8,7 +8,10 @@ import {  //定义组件
   List,               //懒加载
   Cell, CellGroup,     //单元格
   Sticky,                //吸顶
-  Sidebar, SidebarItem
+  Sidebar, SidebarItem,  //侧边导航
+  Icon,                   //字符图标
+  Tab, Tabs,              //Tab 标签页
+
 
 } from 'vant';
 
@@ -33,5 +36,9 @@ export default()=>{ //注册组件
       // 侧边导航
       .use(Sidebar)
       .use(SidebarItem)
+      // 字符图标
+      .use(Icon)
+      //Tab 标签页
+      .use(Tab).use(Tabs)
 
 }

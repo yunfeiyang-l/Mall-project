@@ -13,8 +13,13 @@ const nongchanpin = () => import('../views/ClassifyContainer/nongchanpin.vue') /
 const nongyongzichan = () => import('../views/ClassifyContainer/nongyongzichan.vue') //农用
 const communication = () =>  import('../views/ClassifyContainer/communication')  //通讯
 const maquillage = () =>  import('../views/ClassifyContainer/maquillage')  //化妆
-Vue.use(Router)
 
+//列表页
+const listpage = () => import('../views/Listpage/litspage')
+//详情页
+const detailpage=()=>import('../views/Listpage/detailpage')
+
+Vue.use(Router)
 const routes = [{ //首页路由
     path: '/',
     name: 'home',
@@ -47,7 +52,16 @@ const routes = [{ //首页路由
         component: maquillage
       },
     ]
-
+  },
+  { //列表页
+    path: '/listpage/:id',
+    name: 'listpage',
+    component: listpage
+  },
+  { //详情页
+    path: '/detailpage/:id',
+    name: 'detailpage',
+    component: detailpage
   },
   { //我的
     path: '/mine',

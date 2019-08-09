@@ -3,7 +3,7 @@
   <div class="nongchanpin">
     <div>
       <ul>
-        <li v-for="i in chanpinlist.datas" :key="i.index">
+        <li v-for="i in chanpinlist.datas" :key="i.index" >
           <img :src="i.cate_img" alt="">
           <p>{{i.gc_name}}</p>
         </li>

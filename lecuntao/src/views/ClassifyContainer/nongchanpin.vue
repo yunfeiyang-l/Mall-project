@@ -3,7 +3,7 @@
   <div class="nongchanpin">
     <div>
       <ul>
-        <li v-for="i in chanpinlist.datas" :key="i.index">
+        <li v-for="i in chanpinlist.datas" :key="i.index" :id="i.gc_id" @click="listPage(i.gc_id)">
           <img :src="i.cate_img" alt="">
           <p>{{i.gc_name}}</p>
         </li>
@@ -31,6 +31,12 @@ export default {
       );
       this.chanpinlist = gethomes.data;
       // console.log(this.chanpinlist);
+    },
+    listPage(id){
+      this.$router.push({
+      name:'listpage',
+      params:{id:id}
+      });
     }
   }
 };

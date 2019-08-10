@@ -48,7 +48,7 @@ export default {
         "https://www.easy-mock.com/mock/5d4c1ea6c11cc157dfe0ea09/hoem/listpage"
       );
       this.getlistPages = getlistPage.data.datas;
-      console.log(this.getlistPages);
+      // console.log(this.getlistPages);
     },
     getBack(){//回退
       this.$router.go(-1);

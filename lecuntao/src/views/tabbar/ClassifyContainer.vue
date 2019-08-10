@@ -9,18 +9,23 @@
         <van-sidebar-item v-for="item in this.nav" :key="item.index" :title="item.title" :to="item.url" />
       </van-sidebar>
     </div>
-      <!-- 路由内容 -->
+    <!-- 路由内容 -->
     <div class="nav-router">
       <router-view></router-view>
     </div>
+    <Tabbuttom/>
   </div>
 </template>
 
 <script>
+import Tabbuttom from "../Publicfolder/Tabbuttom.vue";
 export default {
+  components: {
+    Tabbuttom
+  },
   data() {
     return {
-      value:'',
+      value: "",
       activeKey: 0,
       nav: [
         {

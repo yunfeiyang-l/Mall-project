@@ -114,13 +114,21 @@
         </ul>
       </van-list>
     </div>
+    
+    <!-- 底部 -->
+    <Tabbuttom/>
   </div>
 </template>
  
  <script>
+import Tabbuttom from "../Publicfolder/Tabbuttom.vue";
 export default {
+  components: {
+    Tabbuttom
+  },
   data() {
     return {
+      
       lunbohome: [], //轮播
       platform: [], //标签
       le6ji: [], //乐6集
@@ -147,7 +155,7 @@ export default {
         "https://www.easy-mock.com/mock/5d4c1ea6c11cc157dfe0ea09/hoem/home"
       );
       this.lunbohome = gethomes.data.datas.adv;
-     
+
       this.platform = gethomes.data.datas.platform.list;
       this.le6ji = gethomes.data.datas.le6ji;
       this.feature = gethomes.data.datas.feature;

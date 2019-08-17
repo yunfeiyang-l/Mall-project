@@ -69,26 +69,26 @@
 
     <!-- 商品 电器-日用品 -->
     <!-- 循环生成 -->
-    <!-- <div class="dianqi" v-for="i in category_goods" :key="i.index">
+    <div class="dianqi" v-for="i in category_goods" :key="i.index">
       <div class="dianqititle" style="height:30px; background:#ddd; line-height: 30px;font-size: 12px; ">
         <span>{{i.cate_info.cate_name}}</span>
         <span style="color:#666">更多</span>
       </div>
       <ul>
-        <li v-for="k in i.goods_list" :key="k.index"> -->
-    <!-- 渲染图片 -->
-    <!-- <img :src="k.goods_image" alt=""> -->
-    <!-- 渲染详情 -->
-    <!-- <p>{{k.goods_name}}</p>
-          <div> -->
-    <!-- 渲染价格 -->
-    <!-- <span class="s1">{{k.goods_price}}元</span> -->
-    <!-- 渲染件数 -->
-    <!-- <span class="s2">已售{{k.goods_salenum}}件</span> -->
-    <!-- </div>
+        <li v-for="k in i.goods_list" :key="k.index">
+          <!-- 渲染图片 -->
+          <img :src="k.goods_image" alt="">
+          <!-- 渲染详情 -->
+          <p>{{k.goods_name}}</p>
+          <div>
+            <!-- 渲染价格 -->
+            <span class="s1">{{k.goods_price}}元</span>
+            <!-- 渲染件数 -->
+            <span class="s2">已售{{k.goods_salenum}}件</span>
+          </div>
         </li>
       </ul>
-    </div> -->
+    </div>
     <!-- 热门推荐 -->
 
     <div class="dianqi">
@@ -114,7 +114,7 @@
         </ul>
       </van-list>
     </div>
-    
+
     <!-- 底部 -->
     <Tabbuttom/>
   </div>
@@ -128,7 +128,6 @@ export default {
   },
   data() {
     return {
-      
       lunbohome: [], //轮播
       platform: [], //标签
       le6ji: [], //乐6集

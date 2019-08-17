@@ -2,7 +2,7 @@
   <div class="MineContainer">
     <div class="register">
       <van-icon name="cross" @click="huiHome"/>
-      <h2>登录</h2>
+      <h2>注册</h2>
     </div>
     <div class="butTon">
       <button class="b1" @click="denglu">登录</button>
@@ -11,11 +11,12 @@
     <!-- 用户名 -->
     <div class="namepwd">
       <input type="text" placeholder="输入手机号/用户名" class="username" name="username" id="username" autocomplete="off">
-      <input type="password" placeholder="请输入密码" class="pwd" name="password" id="userpwd" autocomplete="off">
+      <input type="password" placeholder="请输入密码" class="pwd pwd1" name="password" id="userpwd" autocomplete="off">
+      <input type="password" placeholder="请确认密码" class="pwd" name="password" id="userpwd" autocomplete="off">
     </div>
     <!-- 登录 -->
     <p>
-      <button >登录</button>
+      <button >注册</button>
       <button class="b2">找回密码</button>
     </p>
     <!-- 底部 -->
@@ -49,7 +50,7 @@ export default {
         name: "register"
       })
     },
-    huiHome(){//回首页
+    huiHome(){
       this.$router.push({
         name: "home"
       })
@@ -83,11 +84,11 @@ export default {
     width: 100%;
     border: 1px solid red;
     border-radius: 5px;
-    .b1 {
+    .b2 {
       background: #f81234;
       color: #fff;
     }
-    .b2 {
+    .b1 {
       background: #fff;
       color: #808080;
     }
@@ -114,10 +115,14 @@ export default {
       border: 0px solid #000;
       border-bottom: 2px solid #d6d6d6;
     }
+    
     .pwd {
       width: 99%;
       height: 50px;
       border: 0px solid #000;
+    }
+    .pwd1{
+      border-bottom: 2px solid #d6d6d6;
     }
   }
   p {
@@ -138,6 +143,7 @@ export default {
       border-radius: 5px;
     }
   }
+ 
 }
 </style>
 

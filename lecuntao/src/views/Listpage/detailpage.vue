@@ -31,12 +31,26 @@
     <div class="picture" v-html="goods_body">
       <!-- {{ this.goodsDetails}} -->
     </div>
+
+    <!-- 底部 -->
+     <!-- <van-action-sheet v-model="show" title="标题" style="z-index: 999;">
+      <p>内容</p>
+    </van-action-sheet> -->
+    
+    <van-goods-action>
+      <van-goods-action-icon icon="chat-o" text="客服" @click="onClickIcon" />
+      <van-goods-action-icon icon="cart-o" info="0" text="购物车" @click="onClickIcon" to='/shopping'/>
+      <van-goods-action-button type="warning" text="加入购物车" @click="onClickButton" ></van-goods-action-button>
+       
+      <van-goods-action-button type="danger" text="立即购买" @click="onClickButton" />
+    </van-goods-action>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      show: false,
       active: 0,
       current: 0,
       bund_goods: [],
@@ -51,6 +65,12 @@ export default {
     this.detApage();
   },
   methods: {
+    onClickIcon() {
+      // Toast('点击图标');
+    },
+    onClickButton() {
+      // Toast('点击按钮');
+    },
     getBack() {
       //回退上一页
       this.$router.go(-1);
@@ -74,7 +94,6 @@ export default {
         "https://www.easy-mock.com/mock/5d4c1ea6c11cc157dfe0ea09/hoem/tupian"
       );
       this.goods_body = goodsDetail.data.datas.goodsDetail.goods_body;
-
     }
   }
 };
@@ -127,16 +146,31 @@ export default {
       height: 50px;
       text-align: center;
       line-height: 50px;
+      
     }
   }
   .jieshao {
     margin: 10px 9px 0px;
   }
   // 图片
-  .picture{
-    img{
+  .picture {
+    img {
       width: 100%;
     }
+  }
+  // 底部
+  .van-goods-action-button--first {
+    margin-left: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .van-goods-action-button {
+    height: 50px;
+  }
+  .van-goods-action-button--last {
+    margin-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 </style>

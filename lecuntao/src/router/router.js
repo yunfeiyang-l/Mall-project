@@ -11,13 +11,15 @@ const shopping = () => import('../views/tabbar/ShoppingContainer') //购物车
 // 子路由
 const nongchanpin = () => import('../views/ClassifyContainer/nongchanpin.vue') //农产品
 const nongyongzichan = () => import('../views/ClassifyContainer/nongyongzichan.vue') //农用
-const communication = () =>  import('../views/ClassifyContainer/communication')  //通讯
-const maquillage = () =>  import('../views/ClassifyContainer/maquillage')  //化妆
+const communication = () => import('../views/ClassifyContainer/communication') //通讯
+const maquillage = () => import('../views/ClassifyContainer/maquillage') //化妆
 
 //列表页
-const listpage = () => import('../views/Listpage/litspage')
+const listpage = () => import('../views/Listpage/litspage');
 //详情页
-const detailpage=()=>import('../views/Listpage/detailpage')
+const detailpage = () => import('../views/Listpage/detailpage');
+// 注册
+const register = ()=> import('../views/MineContainer/register')
 
 Vue.use(Router)
 const routes = [{ //首页路由
@@ -29,9 +31,8 @@ const routes = [{ //首页路由
     path: '/classify',
     name: 'classify',
     component: Classify,
-    redirect:'classify/nongchan',
-    children:[
-      { //农产品
+    redirect: 'classify/nongchan',
+    children: [{ //农产品
         path: 'nongchan',
         name: 'nongchan',
         component: nongchanpin
@@ -68,12 +69,17 @@ const routes = [{ //首页路由
     name: 'mine',
     component: mine
   },
+  {//注册
+    path: '/register',
+    name: 'register',
+    component: register
+  },
   { //购物车
     path: '/shopping',
     name: 'shopping',
     component: shopping
   },
- 
+
 ];
 let router = new Router({
   routes: routes
